@@ -3,4 +3,4 @@ It is an operating system designed for **computation without limits.** No more s
 
 ## Why did you name it after pizza???
 1. Pizza is _desirable_, _addictive_, and you'll _love it_ no matter what. That's where the name *PizzaOS* comes from.  
-2. Pizza is my favorite food (like any other sane 12 year old)  
+2. Pizza is my favorite food (like any other sane human)  
