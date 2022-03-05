@@ -13,15 +13,16 @@ set Sec=%DateTime:~12,2%
 
 set ArchiveName=PizzaOS__%Yr%_%Mon%_%Day%__%Hr%_%Min%_%Sec%
 
-cd /D "D:\PizzaOS\src"
-nasm "D:\PizzaOS\src\boot.asm"
-qemu-system-x86_64 -drive format=raw,file=boot
+cd /D "D:\PizzaOS\repo\src"
+nasm "D:\PizzaOS\repo\src\pzos.asm"
+qemu-system-x86_64 -drive format=raw,file=pzos
 
-mkdir "D:\PizzaOS\build\%ArchiveName%"
-copy "D:\PizzaOS\src\*" "D:\PizzaOS\build\%ArchiveName%"
-cd "D:\PizzaOS\build\"
+mkdir "D:\PizzaOS\repo\build\%ArchiveName%"
+mkdir "D:\PizzaOS\repo\build\%ArchiveName%\src"
+copy "D:\PizzaOS\repo\src\*" "D:\PizzaOS\repo\build\%ArchiveName%\src"
+cd "D:\PizzaOS\repo\build\"
 
 7z a %ArchiveName%.7z %ArchiveName% -mx=9
 
-del "D:\PizzaOS\build\%ArchiveName%" /Q
-rmdir "D:\PizzaOS\build\%ArchiveName%" /Q
+del "D:\PizzaOS\repo\build\%ArchiveName%" /S /Q
+rmdir "D:\PizzaOS\repo\build\%ArchiveName%" /S /Q

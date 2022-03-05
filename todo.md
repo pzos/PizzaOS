@@ -4,4 +4,4 @@ The list is newest items first, oldest last.
 - [ ] Make kernel in C
 - [ ] Get into 64-bit long mode + make 64-bit GDT
 - [ ] Switch to 32-bit protected mode + make GDT
-- [ ] Set up basic bootloader (make it say `Hello PizzaOS` in 16-bit mode)
+- [X] Set up basic bootloader (make it say `Hello PizzaOS` in 16-bit mode)
