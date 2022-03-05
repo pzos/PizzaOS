@@ -47,5 +47,5 @@ pz_bios_disk_error:
 	
 	jmp $
 	
-pz_msg_failedToLoadExtendedBootSector: db `\r\npz_load: Failed to load extended boot sector. Error code:`, 0
+pz_msg_failedToLoadExtendedBootSector: db `\r\npz_load: Failed to load extended boot sector. Error code: `, 0
 pz_msg_additionalSectorsLoadedSuccessfully: db `\r\npz_load: Additional sector loaded successfully`, 0

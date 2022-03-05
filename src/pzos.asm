@@ -22,9 +22,10 @@ call pz_bios_print
 pz_bootsector_hold:
 jmp $
 
-%include "pzos_print.asm"
-%include "pzos_print_hex.asm"
-%include "pzos_load.asm"
+%include "real_mode/pzos_print.asm"
+%include "real_mode/pzos_print_hex.asm"
+%include "real_mode/pzos_load.asm"
+%include "real_mode/pzos_gdt.asm"
 
 pz_msg_bootSectorLoaded: db `\r\npz_boot: Loaded BIOS`, 0
 
@@ -34,7 +35,7 @@ times 510 - ($ - $$) db 0x00
 dw 0xAA55
 
 pz_bootsector_extended:
-	pz_msg_extendedBootSectorLoaded: db `\r\npz_boot: Loaded extended boot sector`, 0x00
+	pz_msg_extendedBootSectorLoaded: db `\r\npz_boot: Loaded extended boot sector`, 0
 
 times 512 - ($ - pz_bootsector_extended) db 0x00
 bu:
