@@ -47,13 +47,17 @@ jmp $
 
 %include "protected_mode/pzos_clear.asm"
 %include "protected_mode/pzos_print.asm"
+%include "protected_mode/pzos_lm_detect.asm"
+%include "protected_mode/pzos_pt_init.asm"
 
 pz_vga_start: equ 0x000B8000
 pz_vga_extent: equ 80 * 25 * 2
+pz_kernel_start: equ 0x00100000
 pz_style_wb: equ 0x0F
 
 pz_msg_extendedBootSectorLoaded: db `\r\npz_boot: Loaded extended boot sector`, 0
-pz_msg_protectedModeAlert: db `pz_boot: Elevated to 32-bit protected mode`, 0
+pz_msg_protectedModeAlert: db `pz_boot: Elevated to 32-bit long mode`, 0
 
 times 512 - ($ - pz_bootsector_extended) db 0x00
-bu:
+pz_long_mode_init:
+times 512 - ($ - pz_long_mode_init) db 0x00
