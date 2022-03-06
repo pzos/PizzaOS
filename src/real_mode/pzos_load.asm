@@ -28,7 +28,7 @@ pz_bios_load:
 	jne pz_bios_disk_error
 	
 	mov bx, pz_msg_additionalSectorsLoadedSuccessfully
-	call pz_bios_print
+	call pz_print16
 	
 	pop dx
 	pop cx
@@ -39,11 +39,11 @@ pz_bios_load:
 	
 pz_bios_disk_error:
 	mov bx, pz_msg_failedToLoadExtendedBootSector
-	call pz_bios_print
+	call pz_print16
 	
 	shr ax, 8
 	mov bx, ax
-	call pz_bios_print_hex
+	call pz_print16_hex
 	
 	jmp $
 	

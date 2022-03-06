@@ -1,7 +1,7 @@
 ;pzos_print_hex.asm: Hex printing
 [bits 16]
 
-pz_bios_print_hex:
+pz_print16_hex:
 	push ax
 	push bx
 	push cx

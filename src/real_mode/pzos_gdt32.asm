@@ -1,4 +1,4 @@
-;pzos_gdt.asm: The GDT
+;pzos_gdt32.asm: The 32-bit GDT
 pz_gdt32_start:
 
 pz_gdt32_null:
@@ -27,5 +27,5 @@ pz_gdt32_descriptor:
 	dw pz_gdt32_end - pz_gdt32_start - 1
 	dd pz_gdt32_start
 	
-pz_seg_code: equ pz_gdt32_code - pz_gdt32_start
-pz_seg_data: equ pz_gdt32_data - pz_gdt32_start
+pz_seg_code32: equ pz_gdt32_code - pz_gdt32_start
+pz_seg_data32: equ pz_gdt32_data - pz_gdt32_start

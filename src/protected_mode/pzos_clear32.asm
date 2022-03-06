@@ -1,16 +1,16 @@
-;pzos_clear.asm: 32-bit protected mode clearing
+;pzos_clear32.asm: 32-bit protected mode clearing
 [bits 32]
 
-pz_clear_protected:
+pz_clear32:
 	pusha
 	
 	mov ebx, pz_vga_extent
 	mov ecx, pz_vga_start
 	mov edx, 0
 	
-	pz_clear_protected_loop:
+	pz_clear32_loop:
 		cmp edx, ebx
-		jge pz_clear_protected_done
+		jge pz_clear32_done
 		
 		push edx
 		
@@ -24,9 +24,9 @@ pz_clear_protected:
 		
 		add edx, 2
 		
-		jmp pz_clear_protected_loop
+		jmp pz_clear32_loop
 		
-pz_clear_protected_done:
+pz_clear32_done:
 	popa
 	ret
 

@@ -37,16 +37,16 @@ pz_lm_detect_protected:
 	ret
 	
 pz_processorNotSupported:
-	call pz_clear_protected
+	call pz_clear32
 	mov esi, pz_msg_processorNotSupported
-	call pz_print_protected
+	call pz_print32
 	
 	jmp $
 	
 pz_lm_notFoundProtected:
-	call pz_clear_protected
+	call pz_clear32
 	mov esi, pz_msg_processorNotSupported
-	call pz_print_protected
+	call pz_print32
 	
 	jmp $
 	
