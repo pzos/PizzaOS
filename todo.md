@@ -2,7 +2,7 @@
 The list is newest items first, oldest last.
 - [ ] Figure out how to port kernel to C++
 - [ ] Make kernel in C
-- [ ] Get into 64-bit long mode + make 64-bit GDT
+- [X] Get into 64-bit long mode + make 64-bit GDT
 - [X] Switch to 32-bit protected mode + make GDT
 	- [X] Switch to 32-bit protected mode
 	- [X] Make GDT
