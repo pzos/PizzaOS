@@ -13,9 +13,9 @@ set Sec=%DateTime:~12,2%
 
 set ArchiveName=PizzaOS__%Yr%_%Mon%_%Day%__%Hr%_%Min%_%Sec%
 
-cd /D "D:\PizzaOS\repo\src"
-nasm "D:\PizzaOS\repo\src\pzos.asm" -o pz.os
-move /Y "D:\PizzaOS\repo\src\pz.os" "D:\PizzaOS\repo\build\"
+cd /D "D:\PizzaOS\repo\src\bootloader"
+nasm "D:\PizzaOS\repo\src\bootloader\pzos.asm" -o pz.os
+move /Y "D:\PizzaOS\repo\src\bootloader\pz.os" "D:\PizzaOS\repo\build\"
 
 mkdir "D:\PizzaOS\repo\archive\%ArchiveName%"
 mkdir "D:\PizzaOS\repo\archive\%ArchiveName%\src"
