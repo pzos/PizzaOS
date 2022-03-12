@@ -1,12 +1,11 @@
 CC = clang
 GDB = gdb 
-
+SHELL=CMD.exe
 LD = ld.lld
 ASM = nasm
-
 INC = -Iinc/
-SRC = $(shell find . -type c -name "*.c")
-ASM_SRC = $(shell find . -type asm -name "*.asm")
+SRC = src/pz_kernel.c
+ASM_SRC = pz_kentry.asm
 
 OBJ = ${ASM_SRC:.asm=.o} ${SRC:.c=.o} 
 
