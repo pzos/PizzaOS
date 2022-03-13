@@ -36,7 +36,7 @@ xcopy "D:\PizzaOS\repo\build\pz_kernel" "D:\PizzaOS\repo\archive\%ArchiveName%\b
 xcopy "D:\PizzaOS\repo\build\pz_kernel.elf" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /e /Y
 mkdir "D:\PizzaOS\repo\archive\%ArchiveName%\obj"
 xcopy "D:\PizzaOS\repo\build\obj\" "D:\PizzaOS\repo\archive\%ArchiveName%\obj" /e /Y
-xcopy "D:\PizzaOS\repo\build\bin\" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /e /Y
+xcopy "D:\PizzaOS\repo\build\" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /Y
 xcopy "D:\PizzaOS\repo\build\pzos.img" "D:\PizzaOS\repo\archive\%ArchiveName%" /e /Y
 
 rmdir "D:\PizzaOS\repo\archive\%ArchiveName%\bin\obj" /S /Q

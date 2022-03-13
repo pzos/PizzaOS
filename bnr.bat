@@ -24,20 +24,21 @@ move /Y "D:\PizzaOS\repo\src\kernel\pz_kernel.elf" "D:\PizzaOS\repo\build\"
 move /Y "D:\PizzaOS\repo\src\kernel\pz_kentry.o" "D:\PizzaOS\repo\build\obj"
 move /Y "D:\PizzaOS\repo\src\kernel\src\pz_kernel.o" "D:\PizzaOS\repo\build\obj"
 cd "D:\PizzaOS\repo\build\"
-cp pz.os ./pzos.img
+cp pz.os pzos.img
 cat pz_kernel >> pzos.img
+cat pz_kernel.elf >> pzos.img
 
 mkdir "D:\PizzaOS\repo\archive\%ArchiveName%"
 mkdir "D:\PizzaOS\repo\archive\%ArchiveName%\src"
 xcopy "D:\PizzaOS\repo\src\" "D:\PizzaOS\repo\archive\%ArchiveName%\src" /e /Y
 mkdir "D:\PizzaOS\repo\archive\%ArchiveName%\bin"
-xcopy "D:\PizzaOS\repo\build\pz.os" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /e /Y
-xcopy "D:\PizzaOS\repo\build\pz_kernel" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /e /Y
+xcopy "D:\PizzaOS\repo\build\pzos.flp" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /e /Y
+xcopy "D:\PizzaOS\repo\build\pz_kernel.flp" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /e /Y
 xcopy "D:\PizzaOS\repo\build\pz_kernel.elf" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /e /Y
 mkdir "D:\PizzaOS\repo\archive\%ArchiveName%\obj"
 xcopy "D:\PizzaOS\repo\build\obj\" "D:\PizzaOS\repo\archive\%ArchiveName%\obj" /e /Y
-xcopy "D:\PizzaOS\repo\build\bin\" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /e /Y
-xcopy "D:\PizzaOS\repo\build\pzos.img" "D:\PizzaOS\repo\archive\%ArchiveName%" /e /Y
+xcopy "D:\PizzaOS\repo\build\" "D:\PizzaOS\repo\archive\%ArchiveName%\bin" /Y
+xcopy "D:\PizzaOS\repo\build\iso\pzos.img" "D:\PizzaOS\repo\archive\%ArchiveName%" /e /Y
 
 rmdir "D:\PizzaOS\repo\archive\%ArchiveName%\bin\obj" /S /Q
 cd "D:\PizzaOS\repo\archive"
@@ -47,7 +48,8 @@ cd "D:\PizzaOS\repo\archive"
 del "D:\PizzaOS\repo\archive\%ArchiveName%" /S /Q
 rmdir "D:\PizzaOS\repo\archive\%ArchiveName%" /S /Q
 
-cd ../
-cd D:\PizzaOS\repo\build
-qemu-system-x86_64 -drive format=raw,file=pzos.img -D "D:\PizzaOS\repo\logs\%ArchiveName%.log"
+cd "D:\PizzaOS\repo\"
+
+cd "D:\PizzaOS\repo\build"
+qemu-system-x86_64 -drive format=raw,file=pzos.img -D "D:\PizzaOS\repo\logs\%ArchiveName%.log" -monitor stdio
 cd ../

@@ -1,8 +1,7 @@
 ;pz_kentry.asm: Enter the C kernel
 [bits 64]
-[extern main]
-[global _start]
+[extern pz_SysMain]
 
 _start:
-    call main
+    call pz_SysMain
     jmp $
