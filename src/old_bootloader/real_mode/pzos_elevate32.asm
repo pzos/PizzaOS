@@ -25,4 +25,4 @@ pz_bios_elevate32:
 	mov ebp, 0x90000
 	mov esp, ebp
 	
-	jmp pz_begin_protected
+	jmp pz_pz_begin32

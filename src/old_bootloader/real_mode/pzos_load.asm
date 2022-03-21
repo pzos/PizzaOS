@@ -17,15 +17,15 @@ pz_bios_load:
 	mov ch, 0x00
 	mov dh, 0x00
 	
-	mov dl, byte[pz_boot_drive]
+	mov dl, byte[pz_pzos_boot_drive]
 	
 	int 0x13
 	
-	jc pz_bios_disk_error
+	jc pz_pz_bios_error_disk
 	
 	pop bx
 	cmp al, bl
-	jne pz_bios_disk_error
+	jne pz_pz_bios_error_disk
 	
 	mov bx, pz_msg_additionalSectorsLoadedSuccessfully
 	call pz_print16
@@ -37,7 +37,7 @@ pz_bios_load:
 	
 	ret
 	
-pz_bios_disk_error:
+pz_pz_bios_error_disk:
 	mov bx, pz_msg_failedToLoadExtendedBootSector
 	call pz_print16
 	

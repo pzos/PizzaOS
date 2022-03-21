@@ -4,8 +4,8 @@ SHELL=CMD.exe
 LD = ld.lld
 ASM = nasm
 INC = -Iinc/
-SRC = src/pzos_kernel.c
-ASM_SRC = pzos_kernel_entry.asm
+SRC = src/pz_kernel.c
+ASM_SRC = pz_kentry.asm
 
 OBJ = ${ASM_SRC:.asm=.o} ${SRC:.c=.o} 
 
@@ -14,12 +14,12 @@ LDFLAGS = -Ttext 0x8200
 LDFLAGS_BIN = ${LDFLAGS} --oformat binary
 ASFLAGS = -f elf64
 
-all: pzos_kernel pzos_kernel.elf
+all: pz_kernel pz_kernel.elf
 
-pzos_kernel: ${OBJ}
+pz_kernel: ${OBJ}
 	${LD} -o $@ ${LDFLAGS_BIN} $^
 
-pzos_kernel.elf: ${OBJ}
+pz_kernel.elf: ${OBJ}
 	${LD} -o $@ ${LDFLAGS} $^
 
 %.o: %.c
@@ -29,4 +29,4 @@ pzos_kernel.elf: ${OBJ}
 	${ASM} $< ${ASFLAGS} -o $@
 
 clean:
-	rm -f pzos_kernel pzos_kernel.elf *.o **/*.o
+	rm -f pz_kernel pz_kernel.elf *.o **/*.o
