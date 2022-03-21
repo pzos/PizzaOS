@@ -1,5 +1,5 @@
-#define pz_vga_start 0xB8000
-#define pz_vga_extent 80 * 25
+#define VGA_START 0xB8000
+#define VGA_EXTENT 80 * 25
 
 #define STYLE_WB 0x0F
 
@@ -8,7 +8,7 @@ typedef struct __attribute__((packed)) {
     char style;
 } vga_char;
 
-volatile vga_char *TEXT_AREA = (vga_char*) pz_vga_start;
+volatile vga_char *TEXT_AREA = (vga_char*) VGA_START;
 
 void clearwin(){
     vga_char clear_char = {
@@ -16,14 +16,14 @@ void clearwin(){
         .style=STYLE_WB
     };
 
-    for(unsigned int i = 0; i < pz_vga_extent; i++){
+    for(unsigned int i = 0; i < VGA_EXTENT; i++){
         TEXT_AREA[i] = clear_char;
     }
 }
 
 void putstr(const char *str){
     for(unsigned int i = 0; str[i] != '\0'; i++){
-        if (i >= pz_vga_extent)
+        if (i >= VGA_EXTENT)
             break;
 
         vga_char temp = {
@@ -35,9 +35,9 @@ void putstr(const char *str){
     }
 }
 
-int pz_SysMain(){
+int main(){
     clearwin();
-    const char *welcome_msg = "pzos_kernel: Loaded kernel";
+    const char *welcome_msg = "Welcome to the kernel! We can program in C and do debugging now";
     putstr(welcome_msg);
 
     return 0;

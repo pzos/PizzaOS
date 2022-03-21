@@ -9,10 +9,10 @@ ASM_SRC = pz_kentry.asm
 
 OBJ = ${ASM_SRC:.asm=.o} ${SRC:.c=.o} 
 
-CCFLAGS = -ggdb -c -ffreestanding -target x86_64-none-elf
+CCFLAGS = -ggdb -c -ffreestanding -target x86__long-none-elf
 LDFLAGS = -Ttext 0x8200
 LDFLAGS_BIN = ${LDFLAGS} --oformat binary
-ASFLAGS = -f elf64
+ASFLAGS = -f elf_long
 
 all: pz_kernel pz_kernel.elf
 

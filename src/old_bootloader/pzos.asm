@@ -56,8 +56,8 @@ jmp $
 %include "protected_mode/pzos_print32.asm"
 %include "protected_mode/pzos_lm_detect.asm"
 %include "protected_mode/pzos_pt_init.asm"
-%include "protected_mode/pzos_gdt64.asm"
-%include "protected_mode/pzos_elevate64.asm"
+%include "protected_mode/pzos_gdt_long.asm"
+%include "protected_mode/pzos_elevate_long.asm"
 
 pz_pz_vga_start: equ 0x000B8000
 pz_pz_vga_extent: equ 80 * 25 * 2
@@ -68,26 +68,26 @@ pz_msg_protectedModeAlert: db `pzos_boot: Elevated to 32-bit protected mode`, 0
 
 times 512 - ($ - pz_pzos_bootsector_extended) db 0x00
 
-pz_begin64:
-[bits 64]
+pz_begin_long:
+[bits _long]
 
 mov rdi, pz_style_whiteFore_blackBack
-call pz_clear64
+call pz_clear_long
 
 mov rdi, pz_style_whiteFore_blackBack
 
-mov rsi, pz_msg_in64BitMode
-call pz_print64
+mov rsi, pz_msg_in_longBitMode
+call pz_print_long
 
 call pz_pz_kernel_start
 
 jmp $
 
-%include "long_mode/pzos_clear64.asm"
-%include "long_mode/pzos_print64.asm"
+%include "long_mode/pzos_clear_long.asm"
+%include "long_mode/pzos_print_long.asm"
 
 pz_pz_kernel_start: equ 0x8200
-pz_msg_in64BitMode: db `pzos_boot: Now in 64-bit long mode`, 0
+pz_msg_in_longBitMode: db `pzos_boot: Now in _long-bit long mode`, 0
 pz_style_whiteFore_blackBack: equ 0xF
 
-times 512 - ($ - pz_begin64) db 0x00
+times 512 - ($ - pz_begin_long) db 0x00

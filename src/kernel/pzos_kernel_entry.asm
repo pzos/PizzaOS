@@ -1,6 +1,6 @@
 [bits 64]
-[extern pz_SysMain]
+[extern main]
 
 _start:
-    call pz_SysMain
+    call main
     jmp $

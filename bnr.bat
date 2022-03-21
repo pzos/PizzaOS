@@ -14,7 +14,7 @@ set Sec=%DateTime:~12,2%
 set ArchiveName=PizzaOS__%Yr%_%Mon%_%Day%__%Hr%_%Min%_%Sec%
 
 cd /D "D:\PizzaOS\repo\src\bootloader"
-nasm "D:\PizzaOS\repo\src\bootloader\pzos.asm" -o pzos
+nasm "D:\PizzaOS\repo\src\bootloader\pzos.asm"
 cd /D "D:\PizzaOS\repo\src\kernel"
 make
 mkdir "D:\PizzaOS\repo\build\obj"
