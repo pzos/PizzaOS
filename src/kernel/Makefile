@@ -1,11 +1,11 @@
 CC = clang
-GDB = gdb 
+GDB = gdb
 SHELL=CMD.exe
 LD = ld.lld
 ASM = nasm
 INC = -Iinc/
-SRC = src/pzos_kernel.c
-ASM_SRC = pzos_kernel_entry.asm
+SRC = src/krnl.c src/cpu/ports.c src/driver/vga.c
+ASM_SRC = krnl_entry.asm
 
 OBJ = ${ASM_SRC:.asm=.o} ${SRC:.c=.o} 
 

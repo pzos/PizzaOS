@@ -16,13 +16,14 @@ set ArchiveName=PizzaOS__%Yr%_%Mon%_%Day%__%Hr%_%Min%_%Sec%
 cd /D "D:\PizzaOS\repo\src\bootloader"
 nasm "D:\PizzaOS\repo\src\bootloader\pzos.asm"
 cd /D "D:\PizzaOS\repo\src\kernel"
+make clean
 make
 mkdir "D:\PizzaOS\repo\build\obj"
 move /Y "D:\PizzaOS\repo\src\bootloader\pzos" "D:\PizzaOS\repo\build\"
 move /Y "D:\PizzaOS\repo\src\kernel\pzos_kernel" "D:\PizzaOS\repo\build\"
 move /Y "D:\PizzaOS\repo\src\kernel\pzos_kernel.elf" "D:\PizzaOS\repo\build\"
-move /Y "D:\PizzaOS\repo\src\kernel\pzos_kernel_entry.o" "D:\PizzaOS\repo\build\obj"
-move /Y "D:\PizzaOS\repo\src\kernel\src\pzos_kernel.o" "D:\PizzaOS\repo\build\obj"
+move /Y "D:\PizzaOS\repo\src\kernel\krnl_entry.o" "D:\PizzaOS\repo\build\obj"
+move /Y "D:\PizzaOS\repo\src\kernel\src\krnl.o" "D:\PizzaOS\repo\build\obj"
 cd "D:\PizzaOS\repo\build\"
 cp pzos pz.os
 cat pzos_kernel >> pz.os
