@@ -1,5 +1,5 @@
-#ifndef __DRIVER_VGA_TEXT
-#define __DRIVER_VGA_TEXT
+#ifndef __VGA
+#define __VGA
 
 #include <types.h>
 

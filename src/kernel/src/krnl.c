@@ -2,6 +2,7 @@
 
 int main() {
     set_cursor_pos(0, 0);
+    show_cursor();
     clearwin(textColor_black, textColor_white);
 
     const char *first = "Now we have a more advanced vga driver that does what we want! ";

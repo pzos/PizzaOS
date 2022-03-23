@@ -24,6 +24,8 @@ move /Y "D:\PizzaOS\repo\src\kernel\pzos_kernel" "D:\PizzaOS\repo\build\"
 move /Y "D:\PizzaOS\repo\src\kernel\pzos_kernel.elf" "D:\PizzaOS\repo\build\"
 move /Y "D:\PizzaOS\repo\src\kernel\krnl_entry.o" "D:\PizzaOS\repo\build\obj"
 move /Y "D:\PizzaOS\repo\src\kernel\src\krnl.o" "D:\PizzaOS\repo\build\obj"
+move /Y "D:\PizzaOS\repo\src\kernel\src\cpu\ports.o" "D:\PizzaOS\repo\build\obj"
+move /Y "D:\PizzaOS\repo\src\kernel\src\driver\vga.o" "D:\PizzaOS\repo\build\obj"
 cd "D:\PizzaOS\repo\build\"
 cp pzos pz.os
 cat pzos_kernel >> pz.os
