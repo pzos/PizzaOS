@@ -4,12 +4,12 @@ SHELL=CMD.exe
 LD = ld.lld
 ASM = nasm
 INC = -Iinc/
-SRC = src/krnl.c src/cpu/ports.c src/driver/vga.c
+SRC = src/krnl.c
 ASM_SRC = krnl_entry.asm
 
 OBJ = ${ASM_SRC:.asm=.o} ${SRC:.c=.o} 
 
-CCFLAGS = -ggdb -c -ffreestanding -target x86_64-none-elf
+CCFLAGS = -ggdb -c -ffreestanding -target x86_64-none-elf -O2
 LDFLAGS = -Ttext 0x8200
 LDFLAGS_BIN = ${LDFLAGS} --oformat binary
 ASFLAGS = -f elf64

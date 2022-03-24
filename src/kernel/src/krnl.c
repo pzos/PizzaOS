@@ -1,21 +1,37 @@
+#include <cpu/ports.h>
 #include <driver/vga.h>
 
+volatile vga_char *textArea = (vga_char*) vga_start;
+
+void clear_console() {
+    vga_char clear_char = {
+        .character=' ',
+        .style=textColor_white
+    };
+
+    for(unsigned int i = 0; i < vga_extent; i++) {
+        textArea[i] = clear_char;
+    }
+}
+
+void print_str(const char *str) {
+    for(unsigned int i = 0; str[i] != '\0'; i++) {
+        if (i >= vga_extent)
+            break;
+
+        vga_char temp = {
+            .character=str[i],
+            .style=textColor_white
+        };
+
+        textArea[i] = temp;
+    }
+}
+
 int main() {
-    set_cursor_pos(0, 0);
-    show_cursor();
-    clearwin(textColor_black, textColor_white);
+    clear_console();
+    const char *msg_loadedKernel = "krnl: Loaded kernel. kkop";
+    print_str(msg_loadedKernel);
 
-    const char *first = "Now we have a more advanced vga driver that does what we want! ";
-
-    print(first, textColor_black, textColor_white);
-
-    const char *second = "It even wraps the text around the screen and moves the cursor correctly. ";
-
-    print(second, textColor_black, textColor_white);
-
-    const char *third = "But if we reach the end of the screen it still doesn't quite scroll properly...";
-
-    print(third, textColor_black, textColor_white);
-    
     return 0;
 }
