@@ -5,22 +5,22 @@
 #define vga_width 80
 #define vga_extent 80 * 25
 
-#define COLOR_BLK 0     // Black
-#define COLOR_BLU 1     // Blue
-#define COLOR_GRN 2     // Green
-#define COLOR_CYN 3     // Cyan
-#define COLOR_RED 4     // Red
-#define COLOR_PRP 5     // Purple
-#define COLOR_BRN 6     // Brown
-#define COLOR_GRY 7     // Gray
-#define COLOR_DGY 8     // Dark Gray
-#define COLOR_LBU 9     // Light Blue
-#define COLOR_LGR 10    // Light Green
-#define COLOR_LCY 11    // Light Cyan
-#define COLOR_LRD 12    // Light Red
-#define COLOR_LPP 13    // Light Purple
-#define COLOR_YEL 14    // Yellow
-#define textColor_white 15
+#define color_black 0
+#define color_blue 1
+#define color_green 2
+#define color_cyan 3
+#define color_red 4
+#define color_purple 5
+#define color_brown 6
+#define color_gray 7
+#define color_darkGray 8
+#define color_lightBlue 9
+#define color_lightGreen 10
+#define color_lightCyan 11
+#define color_lightRed 12
+#define color_lightPurple 13
+#define color_yellow 14
+#define color_white 15
 
 #define cursor_port_command (unsigned short) 0x3D4
 #define cursor_port_data (unsigned short) 0x3D5

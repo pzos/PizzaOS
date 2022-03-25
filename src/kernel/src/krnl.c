@@ -6,7 +6,7 @@ volatile vga_char *textArea = (vga_char*) vga_start;
 void clear_console() {
     vga_char clear_char = {
         .character=' ',
-        .style=textColor_white
+        .style=color_white
     };
 
     for(unsigned int i = 0; i < vga_extent; i++) {
@@ -21,7 +21,7 @@ void print_str(const char *str) {
 
         vga_char temp = {
             .character=str[i],
-            .style=textColor_white
+            .style=color_white
         };
 
         textArea[i] = temp;
@@ -30,7 +30,7 @@ void print_str(const char *str) {
 
 int main() {
     clear_console();
-    const char *msg_loadedKernel = "krnl: Loaded kernel. kkop";
+    const char *msg_loadedKernel = "krnl: Loaded kernel. koop";
     print_str(msg_loadedKernel);
 
     return 0;
