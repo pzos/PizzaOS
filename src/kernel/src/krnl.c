@@ -1,8 +1,6 @@
 #include <cpu/ports.h>
 #include <driver/vga.h>
 
-volatile vga_char *textArea = (vga_char*) vga_start;
-
 void clear_console() {
     vga_char clear_char = {
         .character=' ',
@@ -30,7 +28,7 @@ void print_str(const char *str) {
 
 int main() {
     clear_console();
-    const char *msg_loadedKernel = "krnl: Loaded kernel. koop";
+    const char *msg_loadedKernel = "krnl: Loaded kernel. with 858";
     print_str(msg_loadedKernel);
 
     return 0;

@@ -33,7 +33,7 @@ typedef struct __attribute__((packed)) {
 unsigned char vga_color(const unsigned char fg_color, const unsigned char bg_color);
 
 //void clear_console(const unsigned char fg_color, const unsigned char bg_color);
-//void putchar(const char character, const unsigned char fg_color, const unsigned char bg_color);
+//void print_char(const char character, const unsigned char fg_color, const unsigned char bg_color);
 //void print_str(const char *string, const unsigned char fg_color, const unsigned char bg_color);
 
 unsigned short get_cursor_pos();
