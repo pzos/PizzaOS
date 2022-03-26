@@ -9,7 +9,7 @@
 #define color_blue 1
 #define color_green 2
 #define color_cyan 3
-#define color_red 4
+#define color_red 4o
 #define color_purple 5
 #define color_brown 6
 #define color_gray 7
@@ -30,18 +30,17 @@ typedef struct __attribute__((packed)) {
     char style;
 } vga_char;
 
-unsigned char vga_color(const unsigned char fg_color, const unsigned char bg_color);
+unsigned char vga_color(const unsigned char color_fg, const unsigned char color_bg);
 
-//void clear_console(const unsigned char fg_color, const unsigned char bg_color);
-//void print_char(const char character, const unsigned char fg_color, const unsigned char bg_color);
-//void print_str(const char *string, const unsigned char fg_color, const unsigned char bg_color);
-
-unsigned short get_cursor_pos();
+void clear_console(unsigned char color_fg, unsigned char color_bg);
+void print_str(const char *str, unsigned char color_fg, unsigned char color_bg);
+void print_char(const char character, const unsigned char color_fg, const unsigned char color_bg);
 
 void show_cursor();
 void hide_cursor();
 
 void advance_cursor();
 void set_cursor_pos(unsigned char x, unsigned char y);
+unsigned short get_cursor_pos();
 
 #endif
