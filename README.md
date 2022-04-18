@@ -1,5 +1,5 @@
 # PizzaOS
-It is an operating system designed for **computation without limits.** No more stupid 4GB barriers. No more half-a-century-old unsolved mystery bugs. No more nights pulling hair out with . This OS is meant for people who want to do things that aren't possible on any regular Windows or Mac computer. Say hello to PizzaOS.  
+It is an operating system designed for **computation without limits.** No more stupid 4GB barriers. No more half-a-century-old unsolved mystery bugs. No more nights pulling hair out with Dependency Hell. This OS is meant for people who want to do things that aren't possible on any regular Windows or Mac computer. Say hello to PizzaOS.  
 
 I know, I know, I get overenthusiastic. Forgive me. 🙏
 
