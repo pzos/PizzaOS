@@ -8,4 +8,4 @@ I know, I know, I get overenthusiastic. Forgive me. 🙏
 
 ## Why did you name it after pizza???
 1. Pizza is _desirable_, _addictive_, and you'll _love it_ no matter what. That's where the name *PizzaOS* comes from.  
-2. Pizza is one of my favorite foods (like any other sane human)  
+2. Pizza is one of my favorite foods (like any other sane human without health issues)  
